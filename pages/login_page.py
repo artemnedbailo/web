@@ -9,14 +9,13 @@ class LoginPage(BasePage):
         self.should_be_register_form()
 
     def should_be_login_url(self):
-        # реализуйте проверку на корректный url адрес
+        assert "login" in self.driver.current_url, "'login' not in current url"
         assert True
 
     def should_be_login_form(self):
         assert self.is_element_present(*LoginPageLocators.LOGIN_EMAIL), 'Login_mail link is not presented'
         assert self.is_element_present(*LoginPageLocators.REGISTRATION_PASSWORD), 'Login_password link is not presented'
         assert self.is_element_present(*LoginPageLocators.LOGIN_BUTTON), 'Login_button link is not presented'
-        # реализуйте проверку, что есть форма логина
         assert True
 
     def should_be_register_form(self):
@@ -24,5 +23,4 @@ class LoginPage(BasePage):
         assert self.is_element_present(*LoginPageLocators.REGISTRATION_PASSWORD), 'Login_password link is not presented'
         assert self.is_element_present(*LoginPageLocators.REGISTRATION_PASSWORD_REPEAT), 'Login_password_repeat link is not presented'
         assert self.is_element_present(*LoginPageLocators.REGISTRATION_BUTTON), 'Login_button link is not presented'
-        # реализуйте проверку, что есть форма регистрации на странице
         assert True
