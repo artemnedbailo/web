@@ -14,6 +14,11 @@ class ProductPage(BasePage):
         button = self.driver.find_element(*ProductPageLocators.BUTTON_GO_TO_BASCKET)
         button.click()
 
+    def should_be_name_of_book(self):
+        bookName = self.driver.find_element(*ProductPageLocators.BOOK_NAME_BEFORE)
+        bookName.text
+        assert ProductPageLocators.SUCCESS_MESSAGE_ABOUT_BOOK in bookName, "'login' not in current url"
+        assert True
 
 
 
