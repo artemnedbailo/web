@@ -7,9 +7,12 @@ import math
 
 class ProductPage(BasePage):
     def add_book_shellcoder(self):
-        link = self.driver.find_element(*ProductPageLocators.ADD_TO_BASCKET)
+        link = self.driver.find_element(*ProductPageLocators.BUTTON_ADD_TO_BASCKET)
         link.click()
 
+    def go_to_backet(self):
+        button = self.driver.find_element(*ProductPageLocators.BUTTON_GO_TO_BASCKET)
+        button.click()
 
 
 
