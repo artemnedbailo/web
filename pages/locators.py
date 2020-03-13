@@ -15,3 +15,8 @@ class LoginPageLocators:
     REGISTRATION_PASSWORD = (By.CSS_SELECTOR, '#id_registration-password1')
     REGISTRATION_PASSWORD_REPEAT = (By.CSS_SELECTOR, '#id_registration-password2')
     REGISTRATION_BUTTON = (By.CSS_SELECTOR, '#register_form > button')
+
+class ProductPageLocators:
+    LINK = 'http://selenium1py.pythonanywhere.com/ru/catalogue/the-shellcoders-handbook_209/?promo=newYear'
+    ADD_TO_BASCKET = (By.CSS_SELECTOR, '#add_to_basket_form > button')
+
