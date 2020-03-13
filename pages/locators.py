@@ -22,6 +22,6 @@ class ProductPageLocators:
     BUTTON_GO_TO_BASKET = (By.CSS_SELECTOR, '#default > header > div.page_inner > div > div.basket-mini.pull-right.hidden-xs > span > a')
     SUCCESS_MESSAGE_ABOUT_BOOK = (By.XPATH, '//*[@id="messages"]/div[1]/div/strong')
     BOOK_NAME_BEFORE = (By.CSS_SELECTOR, '#content_inner > article > div.row > div.col-sm-6.product_main > h1')
-    PRICE_OF_BOOK = (By.CLASS_NAME, 'price_color')
-    SUM_OF_MONEY_IN_BASKET = (By.XPATH, '//*[@id="messages"]/div[3]/div/p[1]/strong')
+    PRICE_OF_BOOK = (By.CSS_SELECTOR, '#content_inner > article > div.row > div.col-sm-6.product_main > p.price_color')
+    SUM_OF_MONEY_IN_BASKET = (By.CSS_SELECTOR, '#messages > div.alert.alert-safe.alert-noicon.alert-info.fade.in > div > p:nth-child(1) > strong')
 

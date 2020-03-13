@@ -16,6 +16,7 @@ class ProductPage(BasePage):
 
     def should_be_name_of_book(self):
         bookName = self.driver.find_element(*ProductPageLocators.BOOK_NAME_BEFORE)
+        print('hello---------', bookName.text)
         bookNameAfter = self.driver.find_element(*ProductPageLocators.SUCCESS_MESSAGE_ABOUT_BOOK)
         assert bookNameAfter.text == bookName.text, "Name of book doesnt match with message"
         assert True
@@ -23,11 +24,9 @@ class ProductPage(BasePage):
     def should_be_same_amout_of_money(self):
         moneyOnBook = self.driver.find_element(*ProductPageLocators.PRICE_OF_BOOK)
         moneyOnBasket = self.driver.find_element(*ProductPageLocators.SUM_OF_MONEY_IN_BASKET)
+        print('hello---------', moneyOnBook)
+        print('hello---------', moneyOnBasket)
         assert moneyOnBook.text == moneyOnBasket.text, "Should be same amount of money"
-
-
-
-
 
 
 
