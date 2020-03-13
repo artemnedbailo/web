@@ -17,6 +17,7 @@ class LoginPageLocators:
     REGISTRATION_BUTTON = (By.CSS_SELECTOR, '#register_form > button')
 
 class ProductPageLocators:
+    TEST_LINK = 'http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=newYear2019'
     LINK = 'http://selenium1py.pythonanywhere.com/ru/catalogue/the-shellcoders-handbook_209/?promo=newYear'
     BUTTON_ADD_TO_BASKET = (By.CSS_SELECTOR, '#add_to_basket_form > button')
     BUTTON_GO_TO_BASKET = (By.CSS_SELECTOR, '#default > header > div.page_inner > div > div.basket-mini.pull-right.hidden-xs > span > a')
