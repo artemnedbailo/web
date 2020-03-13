@@ -2,9 +2,7 @@ from .pages.product_page import ProductPage
 
 
 
-def test_guest_can_go_to_login_page(driver):
-    page = MainPage(driver, MainPageLocator.LINK)
+def test_guest_can_go_to_catalogue_shellcoder_page(driver):
+    page = ProductPage(driver, ProductPage.LINK)
     page.open()
-    page.go_to_login_page()
-    login_page = LoginPage(driver, driver.current_url)
-    login_page.should_be_login_page()
+    page.add_book_shellcoder()

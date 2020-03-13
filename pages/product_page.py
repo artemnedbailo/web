@@ -4,7 +4,7 @@ from .locators import ProductPageLocators
 
 
 class ProductPage(BasePage):
-    def go_to_catalouge(self):
+    def add_book_shellcoder(self):
         link = self.driver.find_element(*ProductPageLocators.ADD_TO_BASCKET)
         link.click()
 
