@@ -18,9 +18,10 @@ class LoginPageLocators:
 
 class ProductPageLocators:
     LINK = 'http://selenium1py.pythonanywhere.com/ru/catalogue/the-shellcoders-handbook_209/?promo=newYear'
-    BUTTON_ADD_TO_BASCKET = (By.CSS_SELECTOR, '#add_to_basket_form > button')
-    BUTTON_GO_TO_BASCKET = (By.CSS_SELECTOR, '#default > header > div.page_inner > div > div.basket-mini.pull-right.hidden-xs > span > a')
-    SUCCESS_MESSAGE_ABOUT_BOOK = (By.CLASS_NAME, 'alertinner')
+    BUTTON_ADD_TO_BASKET = (By.CSS_SELECTOR, '#add_to_basket_form > button')
+    BUTTON_GO_TO_BASKET = (By.CSS_SELECTOR, '#default > header > div.page_inner > div > div.basket-mini.pull-right.hidden-xs > span > a')
+    SUCCESS_MESSAGE_ABOUT_BOOK = (By.XPATH, '//*[@id="messages"]/div[1]/div/strong')
     BOOK_NAME_BEFORE = (By.CSS_SELECTOR, '#content_inner > article > div.row > div.col-sm-6.product_main > h1')
-
+    PRICE_OF_BOOK = (By.CLASS_NAME, 'price_color')
+    SUM_OF_MONEY_IN_BASKET = (By.XPATH, '//*[@id="messages"]/div[3]/div/p[1]/strong')
 
