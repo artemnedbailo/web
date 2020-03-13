@@ -3,9 +3,10 @@ from .locators import ProductPageLocators
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoAlertPresentException
 import math
-
+import pytest
 
 class ProductPage(BasePage):
+
     def add_book_shellcoder(self):
         link = self.driver.find_element(*ProductPageLocators.BUTTON_ADD_TO_BASKET)
         link.click()

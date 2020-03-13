@@ -8,6 +8,7 @@ def pytest_addoption(parser):
     parser.addoption('--language', action='store', default='language',
                      help='Choose language: en, ru, fr and etc')
 
+
 @pytest.fixture(scope="function")
 def driver(request):
     driver_name = request.config.getoption('browser_name')

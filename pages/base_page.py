@@ -1,4 +1,4 @@
-from selenium.common.exceptions import NoSuchElementException
+from selenium.common.exceptions import NoSuchElementException, NoAlertPresentException, TimeoutException
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 import math
@@ -31,5 +31,5 @@ class BasePage:
             alert_text = alert.text
             print(f"Your code: {alert_text}")
             alert.accept()
-        except NoAlertPresentException:
+        except TimeoutException:
             print("No second alert presented")
