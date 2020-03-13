@@ -2,7 +2,7 @@ from .pages.product_page import ProductPage
 from .pages.locators import ProductPageLocators
 
 
-def test_guest_can_go_to_catalogue_shellcoder_page(driver):
+def test_guest_can_add_product_to_basket(driver):
     page = ProductPage(driver, ProductPageLocators.LINK)
     page.open()
     page.add_book_shellcoder()
