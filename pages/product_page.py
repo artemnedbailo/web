@@ -10,7 +10,7 @@ class ProductPage(BasePage):
         link = self.driver.find_element(*ProductPageLocators.BUTTON_ADD_TO_BASCKET)
         link.click()
 
-    def go_to_backet(self):
+    def go_to_bascket(self):
         button = self.driver.find_element(*ProductPageLocators.BUTTON_GO_TO_BASCKET)
         button.click()
 
