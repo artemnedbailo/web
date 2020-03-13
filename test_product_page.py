@@ -9,8 +9,8 @@ def test_guest_can_add_product_to_basket(driver):
     page.open()
     page.add_book_shellcoder()
     page.solve_quiz_and_get_code()
+    # time.sleep(20)
     page.go_to_backet()
-    time.sleep(5)
 
 
 

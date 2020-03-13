@@ -22,3 +22,4 @@ class ProductPageLocators:
     BUTTON_GO_TO_BASCKET = (By.CSS_SELECTOR, '#default > header > div.page_inner > div > div.basket-mini.pull-right.hidden-xs > span > a')
 
 
+
