@@ -11,6 +11,13 @@ class ProductPage(BasePage):
         link = self.driver.find_element(*ProductPageLocators.BUTTON_ADD_TO_BASKET)
         link.click()
 
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(*ProductPageLocators.SUCCESS_MESSAGE_ABOUT_BOOK), \
+            "Success message is presented, but should not be"
+    def should_be_success_message(self):
+        assert self.is_element_present(*ProductPageLocators.SUCCESS_MESSAGE_ABOUT_BOOK), \
+            "Success message is presented"
+
     def go_to_bascket(self):
         button = self.driver.find_element(*ProductPageLocators.BUTTON_GO_TO_BASKET)
         button.click()
