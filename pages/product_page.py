@@ -23,6 +23,10 @@ class ProductPage(BasePage):
         assert bookNameAfter.text == bookName.text, "Name of book doesnt match with message"
         assert True
 
+    def should_be_success_message(self):
+        assert self.is_element_present(*ProductPageLocators.SUCCESS_MESSAGE_ABOUT_BOOK), \
+            "Success message is presented"
+
     def should_not_be_success_message(self):
         assert self.is_not_element_present(*ProductPageLocators.SUCCESS_MESSAGE_ABOUT_BOOK), \
             "Success message is presented, but should not be"
@@ -30,10 +34,6 @@ class ProductPage(BasePage):
     def should_not_be_success_message_disappeared(self):
         assert self.is_disappeared(*ProductPageLocators.SUCCESS_MESSAGE_ABOUT_BOOK), \
             "Success message is presented, but should not be"
-
-    def should_be_success_message(self):
-        assert self.is_element_present(*ProductPageLocators.SUCCESS_MESSAGE_ABOUT_BOOK), \
-            "Success message is presented"
 
     def should_be_same_amout_of_money(self):
         moneyOnBook = self.driver.find_element(*ProductPageLocators.PRICE_OF_BOOK)

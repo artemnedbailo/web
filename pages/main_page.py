@@ -4,9 +4,9 @@ from .locators import MainPageLocators
 from selenium.webdriver.common.by import By
 
 class MainPage(BasePage):
-    def __init__(self, *args, **kwargs):
-        super(MainPage, self).__init__(*args, **kwargs)
-
+    # def __init__(self, *args, **kwargs):
+    #     super(MainPage, self).__init__(*args, **kwargs)
+    pass
 
     # def go_to_login_page(self):
     #     link = self.driver.find_element(*MainPageLocator.LOGIN_LINK)

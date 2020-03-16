@@ -21,7 +21,7 @@ def driver(request):
         # driver = webdriver.Chrome(executable_path='C:/werq/brow/chromedriver.exe', options=options)
     # elif browser_name == "firefox":
     #     print("\nstart firefox browser for test..")
-    #     browser = webdriver.Firefox(options=options,)
+    #     browser = webdriver.Firefox(executable_path='', options=options)
     else:
         raise pytest.UsageError("--browser_name should be chrome or firefox")
     print("\nstart browser for test..")
@@ -29,5 +29,6 @@ def driver(request):
     yield driver
     print("\nquit browser..")
     driver.quit()
+
 
 
