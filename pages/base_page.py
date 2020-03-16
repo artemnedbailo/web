@@ -2,6 +2,7 @@ from selenium.common.exceptions import NoSuchElementException, NoAlertPresentExc
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 import math
+from .locators import BasePageLocators
 
 
 class BasePage:
@@ -9,8 +10,9 @@ class BasePage:
         self.driver = driver
         self.link = link
 
-    def open(self):
-        self.driver.get(self.link)
+    def go_to_login_page(self):
+        link = self.browser.find_element(*BasePageLocators.LOGIN_LINK_INVALID)
+        link.click()
 
     def is_element_present(self, how, what):
         try:
@@ -34,6 +36,9 @@ class BasePage:
             return True
         return False
 
+    def open(self):
+        self.driver.get(self.link)
+
     def solve_quiz_and_get_code(self):
         alert = self.driver.switch_to.alert
         x = alert.text.split(" ")[2]
@@ -48,3 +53,9 @@ class BasePage:
             alert.accept()
         except TimeoutException:
             print("No second alert presented")
+
+    def should_be_login_link(self):
+        assert self.is_element_present(*BasePageLocators.LOGIN_LINK), "Login link is not presented"
+
+
+

@@ -1,7 +1,11 @@
 from selenium.webdriver.common.by import By
 
 
-class MainPageLocator:
+class BasePageLocators:
+    LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
+    LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
+
+class MainPageLocators:
     LINK = "http://selenium1py.pythonanywhere.com/"
     LOGIN_LINK = (By.CSS_SELECTOR, '#login_link')
 
@@ -17,6 +21,7 @@ class LoginPageLocators:
     REGISTRATION_BUTTON = (By.CSS_SELECTOR, '#register_form > button')
 
 class ProductPageLocators:
+    TEST_LINK_NEW_FOR_CITY_AND_STARS = 'http://selenium1py.pythonanywhere.com/en-gb/catalogue/the-city-and-the-stars_95/'
     TEST_LINK_WITHOUT_POPUP = 'http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/'
     TEST_LINK_WITH_POPUP = 'http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer0'
     LINK = 'http://selenium1py.pythonanywhere.com/ru/catalogue/the-shellcoders-handbook_209/?promo=newYear'

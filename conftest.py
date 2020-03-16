@@ -17,8 +17,8 @@ def driver(request):
         options = Options()
         options.add_experimental_option('prefs', {'intl.accept_languages': 'language'})
         print("\nstart chrome browser for test..")
-        # driver = webdriver.Chrome(executable_path='C:/fl/firefox.chrome/chromedriver_79.exe', options=options)
-        driver = webdriver.Chrome(executable_path='C:/werq/brow/chromedriver.exe', options=options)
+        driver = webdriver.Chrome(executable_path='C:/fl/firefox.chrome/chromedriver_79.exe', options=options)
+        # driver = webdriver.Chrome(executable_path='C:/werq/brow/chromedriver.exe', options=options)
     # elif browser_name == "firefox":
     #     print("\nstart firefox browser for test..")
     #     browser = webdriver.Firefox(options=options,)
