@@ -17,7 +17,7 @@ class ProductPage(BasePage):
         button = self.driver.find_element(*ProductPageLocators.BUTTON_GO_TO_BASKET)
         button.click()
 
-    def should_be_name_of_book(self):
+    def should_be_same_name_of_book(self):
         bookName = self.driver.find_element(*ProductPageLocators.BOOK_NAME_BEFORE)
         bookNameAfter = self.driver.find_element(*ProductPageLocators.SUCCESS_MESSAGE_ABOUT_BOOK)
         assert bookNameAfter.text == bookName.text, "Name of book doesnt match with message"
