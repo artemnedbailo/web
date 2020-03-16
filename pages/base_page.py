@@ -7,17 +7,29 @@ from .locators import BasePageLocators
 
 class BasePage:
     def __init__(self, driver, link, timeout=10):
+        """
+        Instance Variable
+        """
         self.driver = driver
         self.link = link
 
     def go_to_login_page(self):
-        link = self.browser.find_element(*BasePageLocators.LOGIN_LINK_INVALID)
+        """
+        Transition to login page. Now invalid link could be replaced by valid 'LOGIN_LINK'
+        """
+        link = self.driver.find_element(*BasePageLocators.LOGIN_LINK_INVALID)
         link.click()
 
     def is_element_present(self, how, what):
+        """
+        Element should be presented.
+        Example for (how, what):
+        (By.XPATH, '//*[@id="messages"]/div[1]/div/strong')
+        (*ProductPageLocators.SUCCESS_MESSAGE_ABOUT_BOOK)
+        """
         try:
             self.driver.find_element(how, what)
-        except (NoSuchElementException):
+        except NoSuchElementException:
             return False
         return True
 
@@ -55,6 +67,9 @@ class BasePage:
             print("No second alert presented")
 
     def should_be_login_link(self):
+        """
+        Checking that login button is presented
+        """
         assert self.is_element_present(*BasePageLocators.LOGIN_LINK), "Login link is not presented"
 
 
