@@ -13,17 +13,17 @@ class ProductPage(BasePage):
         link = self.driver.find_element(*ProductPageLocators.BUTTON_ADD_TO_BASKET)
         link.click()
 
-    def go_to_bascket(self):
-        button = self.driver.find_element(*ProductPageLocators.BUTTON_GO_TO_BASKET)
-        button.click()
+    def open_basket_page(self):
+        button_basket = self.driver.find_element(*BasePageLocators.BUTTON_GO_TO_BASKET)
+        button_basket.click()
 
     def should_be_same_name_of_book(self):
         """
         Check that book name from book and from message the same
         """
-        bookName = self.driver.find_element(*ProductPageLocators.BOOK_NAME_BEFORE)
-        bookNameAfter = self.driver.find_element(*ProductPageLocators.SUCCESS_MESSAGE_ABOUT_BOOK)
-        assert bookNameAfter.text == bookName.text, "Name of book doesnt match with message"
+        book_name = self.driver.find_element(*ProductPageLocators.BOOK_NAME_BEFORE)
+        book_name_after = self.driver.find_element(*ProductPageLocators.SUCCESS_MESSAGE_ABOUT_BOOK)
+        assert book_name_after.text == book_name.text, "Name of book doesnt match with message"
         assert True
 
     def should_be_success_message(self):

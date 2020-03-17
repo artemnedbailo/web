@@ -1,10 +1,16 @@
-# from .pages.main_page import MainPage
-# from .pages.login_page import LoginPage
-# from .pages.locators import MainPageLocator
-# from .pages.locators import LoginPageLocators
-#
-#
-#
+import time
+from .pages.main_page import MainPage
+from .pages.login_page import LoginPage
+from .pages.locators import MainPageLocators
+from .pages.locators import LoginPageLocators
+from .pages.base_page import BasePage
+
+
+def test_guest_cant_see_product_in_basket_opened_from_main_page(driver):
+    page = MainPage(driver, MainPageLocators.LINK)
+    page.open()
+    page.open_basket_page()
+
 # def test_guest_can_go_to_login_page(driver):
 #     page = MainPage(driver, MainPageLocator.LINK)
 #     page.open()

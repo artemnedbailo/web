@@ -13,6 +13,10 @@ class BasePage:
         self.driver = driver
         self.link = link
 
+    def go_to_basket(self):
+        button = self.driver.find_element(*BasketPageLocators.BUTTON_GO_TO_BASKET)
+        button.click()
+
     def go_to_login_page(self):
         """
         Transition to login page. Now invalid link could be replaced by valid 'LOGIN_LINK'

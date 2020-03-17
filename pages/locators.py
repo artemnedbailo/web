@@ -5,6 +5,7 @@ import pytest
 class BasePageLocators:
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
     LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
+    BUTTON_GO_TO_BASKET = (By.CSS_SELECTOR, '#default > header > div.page_inner > div > div.basket-mini.pull-right.hidden-xs > span > a')
 
 class MainPageLocators:
     LINK = "http://selenium1py.pythonanywhere.com/"
@@ -22,6 +23,8 @@ class LoginPageLocators:
     REGISTRATION_BUTTON = (By.CSS_SELECTOR, '#register_form > button')
 
 class ProductPageLocators:
+    LINK_MAIN_PAGE = 'http://selenium1py.pythonanywhere.com/ru/'
+    EMPTY_BASKET = (By.CSS_SELECTOR, '#content_inner > p')
     TEST_LINK_NEW_FOR_CITY_AND_STARS = 'http://selenium1py.pythonanywhere.com/en-gb/catalogue/the-city-and-the-stars_95/'
     TEST_LINK_WITHOUT_POPUP = 'http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/'
     TEST_LINK_WITH_POPUP = 'http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer0'

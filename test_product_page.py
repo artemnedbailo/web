@@ -2,17 +2,25 @@ import time
 import pytest
 from .pages.product_page import ProductPage
 from .pages.locators import ProductPageLocators
+from web.pages.locators import BasePageLocators
 
 urls = [f"{ProductPageLocators.TEST_LINK_WITHOUT_POPUP}?promo=offer{num}" for num in range(6,8)]
 
 
-@pytest.mark.parametrize('link', urls)
-def test_guest_can_add_product_to_basket(driver, link):
-    page = ProductPage(driver, link)
+# @pytest.mark.parametrize('link', urls)
+# def test_guest_can_add_product_to_basket(driver, link):
+#     page = ProductPage(driver, link)
+#     page.open()
+#     page.add_book_shellcoder()
+#     page.solve_quiz_and_get_code()
+#     page.should_be_same_name_of_book()
+
+def test_guest_cant_see_product_in_basket_opened_from_product_page(driver):
+    page = ProductPage(driver, ProductPageLocators.TEST_LINK_NEW_FOR_CITY_AND_STARS)
     page.open()
-    page.add_book_shellcoder()
-    page.solve_quiz_and_get_code()
-    page.should_be_same_name_of_book()
+    time.sleep(3)
+    page.open_basket_page()
+    time.sleep(3)
 
 # def test_correct_message_must_be_displayed(driver):
 #     page = ProductPage(driver, ProductPageLocators.TEST_LINK_WITH_POPUP)
