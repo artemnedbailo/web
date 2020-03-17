@@ -13,10 +13,6 @@ class ProductPage(BasePage):
         link = self.driver.find_element(*ProductPageLocators.BUTTON_ADD_TO_BASKET)
         link.click()
 
-    def open_basket_page(self):
-        button_basket = self.driver.find_element(*BasePageLocators.BUTTON_GO_TO_BASKET)
-        button_basket.click()
-
     def should_be_same_name_of_book(self):
         """
         Check that book name from book and from message the same
@@ -39,9 +35,9 @@ class ProductPage(BasePage):
             "Success message is presented, but should not be"
 
     def should_be_same_amout_of_money(self):
-        moneyOnBook = self.driver.find_element(*ProductPageLocators.PRICE_OF_BOOK)
-        moneyOnBasket = self.driver.find_element(*ProductPageLocators.SUM_OF_MONEY_IN_BASKET)
-        assert moneyOnBook.text == moneyOnBasket.text, "Should be same amount of money"
+        money_on_book = self.driver.find_element(*ProductPageLocators.PRICE_OF_BOOK)
+        money_on_basket = self.driver.find_element(*ProductPageLocators.SUM_OF_MONEY_IN_BASKET)
+        assert money_on_book.text == money_on_basket.text, "Should be same amount of money"
 
     def should_click_to_login_link(self):
         button = self.driver.find_element(*BasePageLocators.LOGIN_LINK)
