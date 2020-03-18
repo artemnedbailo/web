@@ -1,6 +1,5 @@
-from web.pages.base_page import BasePage
-from web.pages.locators import BasePageLocators
-
+from .base_page import BasePage
+from .locators import BasePageLocators
 from .locators import ProductPageLocators
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoAlertPresentException
@@ -12,6 +11,10 @@ class ProductPage(BasePage):
     def add_book_shellcoder(self):
         link = self.driver.find_element(*ProductPageLocators.BUTTON_ADD_TO_BASKET)
         link.click()
+
+    def go_to_the_basket(self):
+        button = self.driver.find_element(*BasePageLocators.BUTTON_GO_TO_BASKET)
+        button.click()
 
     def should_be_same_name_of_book(self):
         """
