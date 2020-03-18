@@ -13,11 +13,11 @@ from .pages.locators import BasketPageLocators
 #     page.open()
 #     page.go_to_basket()
 
-def test_guest_cant_see_product_in_basket_opened_from_main_page(driver):
-    page = BasketPage(driver, BasketPageLocators.LINK)
-    page.open()
-    page.go_to_basket()
-    page.check_that_basket_is_empty()
+# def test_guest_cant_see_product_in_basket_opened_from_main_page(driver):
+#     page = BasketPage(driver, BasketPageLocators.LINK)
+#     page.open()
+#     page.go_to_basket()
+#     page.check_that_basket_is_empty()
 
 # def test_guest_can_go_to_login_page(driver):
 #     page = MainPage(driver, MainPageLocator.LINK)

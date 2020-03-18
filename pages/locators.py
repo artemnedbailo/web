@@ -8,7 +8,8 @@ class BasePageLocators:
     BUTTON_GO_TO_BASKET = (By.CSS_SELECTOR, '#default > header > div.page_inner > div > div.basket-mini.pull-right.hidden-xs > span > a')
 
 class BasketPageLocators:
-    LINK = "http://selenium1py.pythonanywhere.com/"
+    LINK_MAIN_PAGE = "http://selenium1py.pythonanywhere.com/"
+    LINK_PRODUCT_PAGE = 'http://selenium1py.pythonanywhere.com/en-gb/catalogue/the-city-and-the-stars_95/'
     EMPTY_BASKET = (By.XPATH, '//*[@id="content_inner"]/p')
 
 class MainPageLocators:
