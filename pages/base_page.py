@@ -21,7 +21,7 @@ class BasePage:
         """
         Transition to login page. Now invalid link could be replaced by valid 'LOGIN_LINK'
         """
-        link = self.driver.find_element(*BasePageLocators.LOGIN_LINK_INVALID)
+        link = self.driver.find_element(*BasePageLocators.LOGIN_LINK)
         link.click()
 
     def is_element_present(self, how, what):
