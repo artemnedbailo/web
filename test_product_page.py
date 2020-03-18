@@ -15,12 +15,12 @@ urls = [f"{ProductPageLocators.TEST_LINK_WITHOUT_POPUP}?promo=offer{num}" for nu
 #     page.solve_quiz_and_get_code()
 #     page.should_be_same_name_of_book()
 
-def test_guest_cant_see_product_in_basket_opened_from_product_page(driver):
-    page = ProductPage(driver, ProductPageLocators.TEST_LINK_NEW_FOR_CITY_AND_STARS)
-    page.open()
-    time.sleep(3)
-    page.open_basket_page()
-    time.sleep(3)
+# def test_guest_cant_see_product_in_basket_opened_from_product_page(driver):
+#     page = ProductPage(driver, ProductPageLocators.TEST_LINK_NEW_FOR_CITY_AND_STARS)
+#     page.open()
+#     time.sleep(3)
+#     page.open_basket_page()
+#     time.sleep(3)
 
 # def test_correct_message_must_be_displayed(driver):
 #     page = ProductPage(driver, ProductPageLocators.TEST_LINK_WITH_POPUP)

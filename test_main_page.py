@@ -8,12 +8,12 @@ from .pages.locators import LoginPageLocators
 from .pages.locators import BasketPageLocators
 
 
-def test_guest_cant_see_product_in_basket_opened_from_main_page(driver):
-    page = MainPage(driver, MainPageLocators.LINK)
-    page.open()
-    page.go_to_basket()
+# def test_guest_cant_see_product_in_basket_opened_from_main_page(driver):
+#     page = MainPage(driver, MainPageLocators.LINK)
+#     page.open()
+#     page.go_to_basket()
 
-def test_testing(driver):
+def test_guest_cant_see_product_in_basket_opened_from_main_page(driver):
     page = BasketPage(driver, BasketPageLocators.LINK)
     page.open()
     page.go_to_basket()

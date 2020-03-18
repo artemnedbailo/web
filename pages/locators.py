@@ -9,7 +9,7 @@ class BasePageLocators:
 
 class BasketPageLocators:
     LINK = "http://selenium1py.pythonanywhere.com/"
-    EMPTY_BASKET = '#content_inner > p'
+    EMPTY_BASKET = (By.XPATH, '//*[@id="content_inner"]/p')
 
 class MainPageLocators:
     LINK = "http://selenium1py.pythonanywhere.com/"
