@@ -7,16 +7,16 @@ from .pages.locators import BasketPageLocators
 from .pages.product_page import ProductPage
 from .pages.locators import ProductPageLocators
 
-urls = [f"{ProductPageLocators.TEST_LINK_WITHOUT_POPUP}?promo=offer{num}" for num in range(6,8)]
-
-
-@pytest.mark.parametrize('link', urls)
-def test_guest_can_add_product_to_basket(driver, link):
-    page = ProductPage(driver, link)
-    page.open()
-    page.add_book_shellcoder()
-    page.solve_quiz_and_get_code()
-    page.should_be_same_name_of_book()
+# urls = [f"{ProductPageLocators.TEST_LINK_WITHOUT_POPUP}?promo=offer{num}" for num in range(6,8)]
+#
+#
+# @pytest.mark.parametrize('link', urls)
+# def test_guest_can_add_product_to_basket(driver, link):
+#     page = ProductPage(driver, link)
+#     page.open()
+#     page.add_book_shellcoder()
+#     page.solve_quiz_and_get_code()
+#     page.should_be_same_name_of_book()
 
 def test_guest_cant_see_product_in_basket_opened_from_product_page(driver):
     page = BasketPage(driver, BasketPageLocators.LINK_PRODUCT_PAGE)

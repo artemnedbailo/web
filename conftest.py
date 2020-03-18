@@ -8,13 +8,19 @@ def pytest_addoption(parser):
     parser.addoption('--language', action='store', default='language',
                      help='Choose language: en, ru, fr and etc')
 
+    parser.addoption("--headless", action="store", default="headless",
+                     help="Is headless driver?")
+
 
 @pytest.fixture(scope="function")
 def driver(request):
     driver_name = request.config.getoption('browser_name')
     user_language = request.config.getoption('language')
+    headless = request.config.getoption('--headless')
+
     if driver_name == "chrome":
         options = Options()
+        # options.add_argument('headless')
         options.add_experimental_option('prefs', {'intl.accept_languages': 'language'})
         print("\nstart chrome browser for test..")
         # driver = webdriver.Chrome(executable_path='C:/fl/firefox.chrome/chromedriver_79.exe', options=options)
