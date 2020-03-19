@@ -1,6 +1,10 @@
 import time
 import pytest
 from .pages.base_page import BasePage
+from .pages.main_page import MainPage
+from .pages.login_page import LoginPage
+from .pages.locators import LoginPageLocators
+from .pages.locators import MainPageLocators
 from web.pages.locators import BasePageLocators
 from .pages.basket_page import BasketPage
 from .pages.locators import BasketPageLocators
@@ -18,18 +22,31 @@ from .pages.locators import ProductPageLocators
 #     page.solve_quiz_and_get_code()
 #     page.should_be_same_name_of_book()
 
+@pytest.mark.test_login
 class TestUserAddToBasketFromProductPage:
-    def test_user_cant_see_success_message(driver):
+    @pytest.fixture(autouse=True)
+    def setup(self, driver):
+        page = LoginPage(driver, LoginPageLocators.LINK)
+        page.open()
+        page.insert_email()
+        page.insert_password()
+        page.insert_password_repeat()
+        page.button_for_registration()
+        yield
+        page.driver_quit()
+
+
+    def test_user_cant_see_success_message(self, driver):
         page = ProductPage(driver, ProductPageLocators.TEST_LINK_WITH_POPUP)
         page.open()
         page.should_not_be_success_message()
 
-    def test_user_can_add_product_to_basket(driver):
+    def test_user_can_add_product_to_basket(self, driver):
         page = ProductPage(driver, ProductPageLocators.TEST_LINK_WITH_POPUP)
         page.open()
         page.add_book_shellcoder()
         page.solve_quiz_and_get_code()
-        page.should_be_name_of_book()
+        page.should_be_same_name_of_book()
         page.should_be_same_amout_of_money()
         # time.sleep(20)
         page.go_to_basket()

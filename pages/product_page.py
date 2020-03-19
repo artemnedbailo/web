@@ -1,6 +1,7 @@
 from .base_page import BasePage
 from .locators import BasePageLocators
 from .locators import ProductPageLocators
+from .locators import LoginPageLocators
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoAlertPresentException
 import math
@@ -11,6 +12,22 @@ class ProductPage(BasePage):
     def add_book_shellcoder(self):
         link = self.driver.find_element(*ProductPageLocators.BUTTON_ADD_TO_BASKET)
         link.click()
+
+    def insert_email(self):
+        email = self.driver.find_element(*LoginPageLocators.REGISTRATION_EMAIL)
+        email.send_keys('qwe@mail.com')
+
+    def insert_password(self):
+        email = self.driver.find_element(*LoginPageLocators.REGISTRATION_PASSWORD)
+        email.send_keys('qweqweqwe')
+
+    def insert_password_repeat(self):
+        email = self.driver.find_element(*LoginPageLocators.REGISTRATION_PASSWORD_REPEAT)
+        email.send_keys('qweqweqwe')
+
+    def button_for_registratio(self):
+        email = self.driver.find_element(*LoginPageLocators.REGISTRATION_BUTTON)
+        email.click()
 
     def go_to_the_basket(self):
         button = self.driver.find_element(*BasePageLocators.BUTTON_GO_TO_BASKET)

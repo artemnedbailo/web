@@ -13,10 +13,6 @@ class BasePage:
         self.driver = driver
         self.link = link
 
-    def should_be_authorized_user(self):
-        assert self.is_element_present(*BasePageLocators.USER_ICON), "User icon is not presented," \
-                                                                     " probably unauthorised user"
-
     def go_to_basket(self):
         button = self.driver.find_element(*BasePageLocators.BUTTON_GO_TO_BASKET)
         button.click()
@@ -58,6 +54,10 @@ class BasePage:
 
     def open(self):
         self.driver.get(self.link)
+
+    def should_be_authorized_user(self):
+        assert self.is_element_present(*BasePageLocators.USER_ICON), "User icon is not presented," \
+                                                                     " probably unauthorised user"
 
     def solve_quiz_and_get_code(self):
         alert = self.driver.switch_to.alert
