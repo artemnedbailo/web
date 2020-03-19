@@ -8,6 +8,9 @@ class LoginPage(BasePage):
         self.should_be_login_form()
         self.should_be_register_form()
 
+#4.3.13    def register_new_user(self, email, password):
+
+
     def should_be_login_url(self):
         assert "login" in self.driver.current_url, "'login' not in current url"
         assert True

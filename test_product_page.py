@@ -18,6 +18,22 @@ from .pages.locators import ProductPageLocators
 #     page.solve_quiz_and_get_code()
 #     page.should_be_same_name_of_book()
 
+class TestUserAddToBasketFromProductPage:
+    def test_user_cant_see_success_message(driver):
+        page = ProductPage(driver, ProductPageLocators.TEST_LINK_WITH_POPUP)
+        page.open()
+        page.should_not_be_success_message()
+
+    def test_user_can_add_product_to_basket(driver):
+        page = ProductPage(driver, ProductPageLocators.TEST_LINK_WITH_POPUP)
+        page.open()
+        page.add_book_shellcoder()
+        page.solve_quiz_and_get_code()
+        page.should_be_name_of_book()
+        page.should_be_same_amout_of_money()
+        # time.sleep(20)
+        page.go_to_basket()
+
 def test_guest_cant_see_product_in_basket_opened_from_product_page(driver):
     page = BasketPage(driver, BasketPageLocators.LINK_PRODUCT_PAGE)
     page.open()
